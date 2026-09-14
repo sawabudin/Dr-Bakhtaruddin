@@ -2,11 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays, ShieldCheck, Star } from "lucide-react";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-slate-50">
       {/* Background decoration */}
       <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-cyan-100/60 blur-3xl" />
+
       <div className="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-100/50 blur-3xl" />
 
       <div className="relative mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:px-8">
@@ -16,7 +19,16 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Small badge */}
+          {/* Trust Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-sm font-medium text-cyan-700"
+          >
+            <span className="h-2 w-2 rounded-full bg-cyan-500" />
+            Trusted Dental Care
+          </motion.div>
 
           {/* Heading */}
           <motion.h1
@@ -25,7 +37,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="max-w-2xl text-5xl font-bold leading-tight tracking-tight text-blue-800 sm:text-6xl"
           >
-            Dr.Bakhtaruddin
+            Dr. Bakhtaruddin
             <span className="block text-blue-800">
               Dental & Implant Center.
             </span>
@@ -41,15 +53,6 @@ const Hero = () => {
             Experience modern, comfortable dental care from a team dedicated to
             keeping your smile healthy, confident, and beautiful.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-cyan-50 mt-5 px-4 py-2 text-sm font-medium text-cyan-700"
-          >
-            <span className="h-2 w-2 rounded-full bg-cyan-500" />
-            Trusted Dental Care
-          </motion.div>
 
           {/* Buttons */}
           <motion.div
@@ -81,7 +84,7 @@ const Hero = () => {
             </motion.a>
           </motion.div>
 
-          {/* Trust indicators */}
+          {/* Trust Indicators */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -90,6 +93,7 @@ const Hero = () => {
           >
             <div className="flex items-center gap-2">
               <ShieldCheck className="text-cyan-600" size={20} />
+
               <span className="text-sm font-medium text-slate-600">
                 Experienced Dentists
               </span>
@@ -97,6 +101,7 @@ const Hero = () => {
 
             <div className="flex items-center gap-2">
               <Star size={20} className="fill-current text-yellow-500" />
+
               <span className="text-sm font-medium text-slate-600">
                 5.0 Patient Rating
               </span>
@@ -108,10 +113,14 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, x: 60, scale: 0.95 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+            delay: 0.2,
+          }}
           className="relative mx-auto w-full max-w-xl"
         >
-          {/* Main image */}
+          {/* Main Image */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{
@@ -122,20 +131,29 @@ const Hero = () => {
             className="relative overflow-hidden rounded-[2rem] shadow-2xl"
           >
             <img
-              src="\Tasal 2.jpeg"
+              src={`${BASE_URL}images/Tasal-2.jpeg`}
               alt="Professional dentist"
-              className="h-[570px] w-full object-contain"
+              className="h-[570px] w-full object-cover"
+              onError={(e) => {
+                console.error(
+                  "Hero image not found:",
+                  `${BASE_URL}images/Tasal-2.jpeg`,
+                );
+              }}
             />
 
-            {/* Image overlay */}
+            {/* Image Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
           </motion.div>
 
-          {/* Appointment floating card */}
+          {/* Appointment Floating Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.7 }}
+            transition={{
+              delay: 1,
+              duration: 0.7,
+            }}
             whileHover={{ y: -5 }}
             className="absolute -bottom-6 -left-6 rounded-2xl bg-white p-5 shadow-xl sm:-left-8"
           >
@@ -146,6 +164,7 @@ const Hero = () => {
 
               <div>
                 <p className="text-xs text-slate-500">Need an appointment?</p>
+
                 <p className="font-semibold text-slate-900">
                   We're here for you
                 </p>
@@ -153,11 +172,14 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Rating card */}
+          {/* Rating Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
+            transition={{
+              delay: 1.2,
+              duration: 0.6,
+            }}
             className="absolute -right-4 top-8 rounded-2xl bg-white px-5 py-4 shadow-xl sm:-right-8"
           >
             <div className="flex items-center gap-1">

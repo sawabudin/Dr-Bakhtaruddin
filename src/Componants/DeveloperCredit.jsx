@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   FaWhatsapp,
   FaFacebookF,
@@ -7,10 +8,29 @@ import {
 } from "react-icons/fa";
 
 const DeveloperCredit = () => {
+  // =====================================================
+  // Developer Social Links
+  // =====================================================
+
+  const whatsappNumber = "93775457276";
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
+  // خپل اصلي Facebook لینک دلته واچوه
+  const facebookLink = "https://www.facebook.com/";
+
+  // خپل اصلي Instagram لینک دلته واچوه
+  const instagramLink = "https://www.instagram.com/";
+
+  // Email
+  const email = "zazaisawabudin4@gmail.com";
+
   return (
     <div className="border-t border-gray-200/80 bg-white">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-5 sm:flex-row">
-        {/* Developer Name */}
+        {/* =================================================
+            Developer Name
+        ================================================== */}
         <div className="text-center sm:text-left">
           <p className="text-sm text-gray-500">
             Designed & Developed by{" "}
@@ -20,62 +40,56 @@ const DeveloperCredit = () => {
           <p className="mt-1 text-xs text-gray-400">Web Developer</p>
         </div>
 
-        {/* Social Icons */}
+        {/* =================================================
+            Social Icons
+        ================================================== */}
         <div className="flex items-center gap-2">
-          {/* WhatsApp */}
+          {/* =================================================
+              WhatsApp
+          ================================================== */}
           <a
-            href="YOUR_WHATSAPP_LINK"
+            href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
-            className="flex h-9 w-9 items-center justify-center rounded-full
-                       border border-gray-200 text-gray-500
-                       transition-all duration-300
-                       hover:-translate-y-1 hover:border-green-500
-                       hover:bg-green-500 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-all duration-300 hover:-translate-y-1 hover:border-green-500 hover:bg-green-500 hover:text-white"
           >
             <FaWhatsapp size={16} />
           </a>
 
-          {/* Facebook */}
+          {/* =================================================
+              Facebook
+          ================================================== */}
           <a
-            href="YOUR_FACEBOOK_LINK"
+            href={facebookLink}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
-            className="flex h-9 w-9 items-center justify-center rounded-full
-                       border border-gray-200 text-gray-500
-                       transition-all duration-300
-                       hover:-translate-y-1 hover:border-blue-600
-                       hover:bg-blue-600 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-all duration-300 hover:-translate-y-1 hover:border-blue-600 hover:bg-blue-600 hover:text-white"
           >
             <FaFacebookF size={14} />
           </a>
 
-          {/* Instagram */}
+          {/* =================================================
+              Instagram
+          ================================================== */}
           <a
-            href="YOUR_INSTAGRAM_LINK"
+            href={instagramLink}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="flex h-9 w-9 items-center justify-center rounded-full
-                       border border-gray-200 text-gray-500
-                       transition-all duration-300
-                       hover:-translate-y-1 hover:border-pink-500
-                       hover:bg-pink-500 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500 hover:bg-pink-500 hover:text-white"
           >
             <FaInstagram size={16} />
           </a>
 
-          {/* Email */}
+          {/* =================================================
+              Email
+          ================================================== */}
           <a
-            href="mailto:YOUR_EMAIL@gmail.com"
+            href={`mailto:${email}`}
             aria-label="Email"
-            className="flex h-9 w-9 items-center justify-center rounded-full
-                       border border-gray-200 text-gray-500
-                       transition-all duration-300
-                       hover:-translate-y-1 hover:border-red-500
-                       hover:bg-red-500 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition-all duration-300 hover:-translate-y-1 hover:border-red-500 hover:bg-red-500 hover:text-white"
           >
             <FaEnvelope size={15} />
           </a>
@@ -83,6 +97,6 @@ const DeveloperCredit = () => {
       </div>
     </div>
   );
-};
+};;
 
 export default DeveloperCredit;

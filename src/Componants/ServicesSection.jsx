@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+
 import {
   Sparkles,
   ShieldCheck,
@@ -54,8 +55,9 @@ const ServicesSection = () => {
       id="services"
       className="relative overflow-hidden bg-slate-50 py-20 sm:py-24 lg:py-28"
     >
-      {/* Background decoration */}
+      {/* Background Decoration */}
       <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-cyan-100/50 blur-3xl" />
+
       <div className="absolute -right-32 bottom-20 h-72 w-72 rounded-full bg-blue-100/50 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -128,14 +130,19 @@ const ServicesSection = () => {
                 </p>
 
                 {/* Learn More */}
-                <motion.div
+                <motion.a
+                  href="#contact"
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 + index * 0.08 }}
-                  className="mt-6"
-                ></motion.div>
+                  transition={{
+                    delay: 0.2 + index * 0.08,
+                  }}
+                  className="mt-6 inline-block text-sm font-semibold text-cyan-600 transition hover:text-cyan-700"
+                >
+                  Book Now →
+                </motion.a>
 
-                {/* Hover line */}
+                {/* Hover Line */}
                 <div className="absolute bottom-0 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full bg-cyan-600 transition-all duration-300 group-hover:w-1/2" />
               </motion.article>
             );
@@ -149,7 +156,11 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="mt-12 text-center"
-        ></motion.div>
+        >
+          <p className="text-sm text-slate-500 sm:text-base">
+            Professional dental care for you and your family.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

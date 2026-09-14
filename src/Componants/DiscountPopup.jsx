@@ -21,6 +21,7 @@ const DiscountPopup = () => {
       <button
         onClick={() => setShowPopup(false)}
         className="absolute right-3 top-3 text-xl text-gray-500 hover:text-black"
+        aria-label="Close popup"
       >
         ×
       </button>
@@ -37,12 +38,15 @@ const DiscountPopup = () => {
         <p className="mb-4 text-gray-600">
           Get 30% discount on dental cleaning and examination this month.
         </p>
-        {/* <button
-          to="/acontact"
-          className="bg-cyan-500 text-white px-7 p-2 rounded-md"
+
+        {/* Optional Button */}
+        {/* 
+        <button
+          className="rounded-md bg-cyan-500 px-7 py-2 text-white transition hover:bg-cyan-600"
         >
           View More Discount
-        </button> */}
+        </button>
+        */}
       </div>
     </div>
   );

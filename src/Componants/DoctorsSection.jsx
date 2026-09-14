@@ -1,29 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 const doctors = [
   {
     name: "Dr. Bakhtaruddin",
     specialty: "General Dentist",
     experience: "7+ Years Experience",
-    study: "BDS & RDS (Khyber Medical University-pakistan) C-End , C-Ortho ",
-    image: "/Tasal 3.jpeg",
+    study: "BDS & RDS (Khyber Medical University - Pakistan), C-End, C-Ortho",
+    image: `${BASE_URL}images/Tasal-3.jpeg`,
   },
   {
     name: "Dr. Yalda Hanifi",
     specialty: "Cosmetic Dentist",
     experience: "6+ Years Experience",
-
-    image: "/femaldoc.png",
-    study: "MDS ( kabul Mecical University )",
+    study: "MDS (Kabul Medical University)",
+    image: `${BASE_URL}images/femaldoc.png`,
   },
   {
-    name: "Dr.sawabudin zazai",
+    name: "Dr. Sawabudin Zazai",
     specialty: "Orthodontist",
     experience: "10+ Years Experience",
-    image: "/d1.jpeg",
     study: "Kabul Medical University",
+    image: `${BASE_URL}images/d1.jpeg`,
   },
 ];
 
@@ -82,14 +82,15 @@ const DoctorsSection = () => {
                 <img
                   src={doctor.image}
                   alt={doctor.name}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-105"
+                  onError={(e) => {
+                    console.error(`Image not found: ${doctor.image}`);
+                    e.currentTarget.style.display = "none";
+                  }}
                 />
 
                 {/* Image Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-
-                {/* Social Icons */}
-                <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 translate-y-5 gap-3 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100"></div>
               </div>
 
               {/* Doctor Information */}
@@ -106,8 +107,8 @@ const DoctorsSection = () => {
                   {doctor.experience}
                 </p>
 
-                <div className="mt-5 border-t text-slate-600 border-slate-100 pt-5">
-                  <p>{doctor.study}</p>
+                <div className="mt-5 border-t border-slate-100 pt-5 text-slate-600">
+                  <p className="text-sm leading-6">{doctor.study}</p>
                 </div>
               </div>
             </motion.article>
@@ -121,7 +122,11 @@ const DoctorsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-14 text-center"
-        ></motion.div>
+        >
+          <p className="text-slate-500">
+            Professional care from experienced dental specialists.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

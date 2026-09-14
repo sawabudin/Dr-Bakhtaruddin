@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUp, Phone, Mail, MapPin, Clock } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,6 +29,8 @@ const Footer = () => {
     { name: "Contact", href: "#contact" },
     { name: "Location", href: "#location" },
   ];
+
+  const whatsappNumber = "93775457276";
 
   return (
     <footer className="bg-slate-950 text-white">
@@ -47,34 +55,42 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="mt-6 flex gap-3">
+              {/* Facebook */}
               <a
                 href="#"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-full
-                bg-slate-800 text-slate-300 transition
-                hover:bg-cyan-500 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition hover:bg-cyan-500 hover:text-white"
               >
-                <i className="fa-brands fa-facebook-f"></i>
+                <FaFacebookF size={16} />
               </a>
 
+              {/* Instagram */}
               <a
                 href="#"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full
-                bg-slate-800 text-slate-300 transition
-                hover:bg-cyan-500 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition hover:bg-cyan-500 hover:text-white"
               >
-                <i className="fa-brands fa-instagram"></i>
+                <FaInstagram size={16} />
               </a>
 
+              {/* LinkedIn */}
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-full
-                bg-slate-800 text-slate-300 transition
-                hover:bg-cyan-500 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition hover:bg-cyan-500 hover:text-white"
               >
-                <i className="fa-brands fa-linkedin-in"></i>
+                <FaLinkedinIn size={16} />
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-slate-300 transition hover:bg-green-500 hover:text-white"
+              >
+                <FaWhatsapp size={17} />
               </a>
             </div>
           </motion.div>
@@ -84,7 +100,10 @@ const Footer = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.1,
+            }}
           >
             <h3 className="text-lg font-semibold">Quick Links</h3>
 
@@ -93,8 +112,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-slate-400 transition
-                    hover:text-cyan-400"
+                    className="text-sm text-slate-400 transition hover:text-cyan-400"
                   >
                     {link.name}
                   </a>
@@ -108,7 +126,10 @@ const Footer = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+            }}
           >
             <h3 className="text-lg font-semibold">Our Services</h3>
 
@@ -117,8 +138,7 @@ const Footer = () => {
                 <li key={service}>
                   <a
                     href="#services"
-                    className="text-sm text-slate-400 transition
-                    hover:text-cyan-400"
+                    className="text-sm text-slate-400 transition hover:text-cyan-400"
                   >
                     {service}
                   </a>
@@ -132,7 +152,10 @@ const Footer = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.3,
+            }}
           >
             <h3 className="text-lg font-semibold">Contact Us</h3>
 
@@ -158,9 +181,8 @@ const Footer = () => {
                   <p className="text-sm font-medium">Phone</p>
 
                   <a
-                    href="tel: +93786626934"
-                    className="mt-1 block text-sm text-slate-400
-                    transition hover:text-cyan-400"
+                    href="tel:+93786626934"
+                    className="mt-1 block text-sm text-slate-400 transition hover:text-cyan-400"
                   >
                     +93786626934
                   </a>
@@ -175,16 +197,15 @@ const Footer = () => {
                   <p className="text-sm font-medium">Email</p>
 
                   <a
-                    href="mailto:info@smiledental.com"
-                    className="mt-1 block text-sm text-slate-400
-                    transition hover:text-cyan-400"
+                    href="mailto:zazaisawabudin4@gmail.com"
+                    className="mt-1 block break-all text-sm text-slate-400 transition hover:text-cyan-400"
                   >
-                    Bakhtaruddin@gamil.com
+                    zazaisawabudin4@gmail.com
                   </a>
                 </div>
               </div>
 
-              {/* Hours */}
+              {/* Opening Hours */}
               <div className="flex gap-3">
                 <Clock className="mt-1 h-5 w-5 shrink-0 text-cyan-400" />
 
@@ -192,7 +213,7 @@ const Footer = () => {
                   <p className="text-sm font-medium">Opening Hours</p>
 
                   <p className="mt-1 text-sm text-slate-400">
-                    Sat - Thur: 8:00 AM - 9:00 PM
+                    Sat - Thu: 8:00 AM - 9:00 PM
                   </p>
                 </div>
               </div>
@@ -203,13 +224,9 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-slate-800">
-        <div
-          className="mx-auto flex max-w-7xl flex-col items-center
-          justify-between gap-4 px-4 py-6 sm:px-6
-          md:flex-row lg:px-8"
-        >
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:px-6 md:flex-row lg:px-8">
           <p className="text-center text-sm text-slate-500 md:text-left">
-            © {2026} Dr.Bakhtaruddin All rights reserved.
+            © {currentYear} Dr. Bakhtaruddin. All rights reserved.
           </p>
 
           <div className="flex items-center gap-5 text-sm">
@@ -227,18 +244,22 @@ const Footer = () => {
               Terms
             </a>
 
-            {/* Back to Top */}
-            <motion.a
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            {/* Back To Top */}
+            <motion.button
+              type="button"
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.9 }}
-              className="flex h-10 w-10 items-center justify-center
-              rounded-full bg-cyan-500 text-white
-              transition hover:bg-cyan-400"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500 text-white transition hover:bg-cyan-400"
               aria-label="Back to top"
             >
               <ArrowUp className="h-5 w-5" />
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </div>

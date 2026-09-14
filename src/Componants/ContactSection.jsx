@@ -3,11 +3,16 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 
 const ContactSection = () => {
-  // WhatsApp number
+  // =====================================================
+  // WhatsApp Number
   // Afghanistan +93
   // Without +, spaces, or -
+  // =====================================================
   const whatsappNumber = "93775457276";
 
+  // =====================================================
+  // Contact Information
+  // =====================================================
   const contactInfo = [
     {
       icon: Phone,
@@ -31,7 +36,9 @@ const ContactSection = () => {
     },
   ];
 
+  // =====================================================
   // WhatsApp Form Submission
+  // =====================================================
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -57,17 +64,32 @@ Message: ${form.message.value}`;
       id="contact"
       className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
     >
-      {/* Background Decorations */}
+      {/* =================================================
+          Background Decorations
+      ================================================== */}
       <div className="absolute -left-24 top-20 h-64 w-64 rounded-full bg-cyan-100/50 blur-3xl" />
+
       <div className="absolute -right-24 bottom-20 h-72 w-72 rounded-full bg-cyan-100/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* =================================================
+            Section Header
+        ================================================== */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
           className="mx-auto max-w-2xl text-center"
         >
           <span className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-700">
@@ -84,14 +106,28 @@ Message: ${form.message.value}`;
           </p>
         </motion.div>
 
-        {/* Main Contact Area */}
+        {/* =================================================
+            Main Contact Area
+        ================================================== */}
         <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* LEFT SIDE */}
+          {/* =================================================
+              LEFT SIDE
+          ================================================== */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{
+              opacity: 0,
+              x: -40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
           >
             <h3 className="text-2xl font-bold text-slate-900 sm:text-3xl">
               Get in Touch
@@ -102,7 +138,9 @@ Message: ${form.message.value}`;
               you choose the right treatment, and schedule your visit.
             </p>
 
-            {/* Contact Information */}
+            {/* =================================================
+                Contact Information
+            ================================================== */}
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {contactInfo.map((item, index) => {
                 const Icon = item.icon;
@@ -110,14 +148,24 @@ Message: ${form.message.value}`;
                 return (
                   <motion.div
                     key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    initial={{
+                      opacity: 0,
+                      y: 20,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
                     transition={{
                       duration: 0.5,
                       delay: index * 0.1,
                     }}
-                    whileHover={{ y: -5 }}
+                    whileHover={{
+                      y: -5,
+                    }}
                     className="rounded-2xl border border-slate-100 bg-slate-50 p-5 transition-shadow duration-300 hover:shadow-lg"
                   >
                     <div className="flex items-start gap-4">
@@ -140,9 +188,13 @@ Message: ${form.message.value}`;
               })}
             </div>
 
-            {/* WhatsApp Card */}
+            {/* =================================================
+                WhatsApp Card
+            ================================================== */}
             <motion.div
-              whileHover={{ scale: 1.02 }}
+              whileHover={{
+                scale: 1.02,
+              }}
               className="mt-6 rounded-2xl bg-cyan-600 p-6 text-white shadow-lg shadow-cyan-200"
             >
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
@@ -162,6 +214,7 @@ Message: ${form.message.value}`;
                   </div>
                 </div>
 
+                {/* WhatsApp Button */}
                 <a
                   href={`https://wa.me/${whatsappNumber}`}
                   target="_blank"
@@ -175,12 +228,24 @@ Message: ${form.message.value}`;
             </motion.div>
           </motion.div>
 
-          {/* RIGHT SIDE — APPOINTMENT FORM */}
+          {/* =================================================
+              RIGHT SIDE — APPOINTMENT FORM
+          ================================================== */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
             className="rounded-3xl border border-slate-100 bg-white p-6 shadow-xl shadow-slate-200/60 sm:p-8"
           >
             <div>
@@ -194,9 +259,13 @@ Message: ${form.message.value}`;
               </p>
             </div>
 
-            {/* FORM */}
+            {/* =================================================
+                FORM
+            ================================================== */}
             <form onSubmit={handleSubmit} className="mt-7 space-y-5">
-              {/* Name */}
+              {/* =================================================
+                  Name
+              ================================================== */}
               <div>
                 <label
                   htmlFor="name"
@@ -215,7 +284,9 @@ Message: ${form.message.value}`;
                 />
               </div>
 
-              {/* Phone */}
+              {/* =================================================
+                  Phone
+              ================================================== */}
               <div>
                 <label
                   htmlFor="phone"
@@ -234,7 +305,9 @@ Message: ${form.message.value}`;
                 />
               </div>
 
-              {/* Email */}
+              {/* =================================================
+                  Email
+              ================================================== */}
               <div>
                 <label
                   htmlFor="email"
@@ -252,7 +325,9 @@ Message: ${form.message.value}`;
                 />
               </div>
 
-              {/* Service */}
+              {/* =================================================
+                  Service
+              ================================================== */}
               <div>
                 <label
                   htmlFor="service"
@@ -273,17 +348,24 @@ Message: ${form.message.value}`;
                   </option>
 
                   <option value="General Checkup">General Checkup</option>
+
                   <option value="Teeth Cleaning">Teeth Cleaning</option>
+
                   <option value="Teeth Whitening">Teeth Whitening</option>
+
                   <option value="Dental Implants">Dental Implants</option>
+
                   <option value="Braces">Braces</option>
+
                   <option value="Emergency Dental Care">
                     Emergency Dental Care
                   </option>
                 </select>
               </div>
 
-              {/* Message */}
+              {/* =================================================
+                  Message
+              ================================================== */}
               <div>
                 <label
                   htmlFor="message"
@@ -302,10 +384,16 @@ Message: ${form.message.value}`;
                 />
               </div>
 
-              {/* Submit */}
+              {/* =================================================
+                  Submit Button
+              ================================================== */}
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{
+                  scale: 1.02,
+                }}
+                whileTap={{
+                  scale: 0.98,
+                }}
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-cyan-200 transition hover:bg-cyan-700"
               >

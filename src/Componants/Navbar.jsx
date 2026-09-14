@@ -30,7 +30,7 @@ const Navbar = () => {
             className="group flex items-center gap-2"
           >
             <img
-              src="\Logophoto.png"
+              src="images\Logophoto.png"
               className="w-20 object-cover"
               alt="This is the logo image."
             />
