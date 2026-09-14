@@ -1,13 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./Componants/Navbar";
+
 import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Services from "./Pages/Services";
-import Contact from "./Pages/Contact";
-import Hero from "./Componants/Hero";
-import ServicesSection from "./Componants/ServicesSection";
 import AboutSection from "./Componants/AboutSection";
+import ServicesSection from "./Componants/ServicesSection";
 import ContactSection from "./Componants/ContactSection";
 import TestimonialsSection from "./Componants/TestimonialsSection";
 import DoctorsSection from "./Componants/DoctorsSection";
@@ -21,6 +19,7 @@ const App = () => {
   return (
     <>
       <DiscountPopup />
+
       <Navbar />
 
       <Routes>
@@ -30,7 +29,12 @@ const App = () => {
         <Route path="/contact" element={<ContactSection />} />
         <Route path="/testimonials" element={<TestimonialsSection />} />
         <Route path="/doctors" element={<DoctorsSection />} />
+        <Route path="/location" element={<LocationSection />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
+
+      <Footer />
+      <DeveloperCredit />
     </>
   );
 };
